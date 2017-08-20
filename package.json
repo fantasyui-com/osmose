@@ -1,0 +1,20 @@
+{
+  "name": "osmose",
+  "version": "1.0.0",
+  "description": "Electron application for easy color balancing and filtering.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fantasyui-com/osmose.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fantasyui-com/osmose/issues"
+  },
+  "homepage": "https://github.com/fantasyui-com/osmose#readme"
+}

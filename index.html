@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+
+      <div class="row">
+
+
+
+
+
+
+        <div class="col">
+          <div class="card">
+
+            <div class="card-block">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+              <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+              <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+              <div class="p-3 mb-2 bg-warning text-white">.bg-warning</div>
+              <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+            </div>
+
+            <div class="card-block">
+            <h4 class="card-title">Input</h4>
+            <form>
+            <div class="form-group">
+            <label for="exampleFormControlTextarea1">Paste colors below:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="13">
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan: #17a2b8 !default;
+            </textarea>
+            </div>
+            </form>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="col">
+
+          <form id="emitter-example-form" class="bg-faded p-3">
+            <div class="form-group row">
+              <label class="col-sm-12 col-form-label">Color Osmosis</label>
+            </div>
+            <div class="form-group">
+              <label for="exampleSelect1">Select Transformer</label>
+              <select class="form-control" id="event-name-select">
+                <option>Solarizer</option>
+                <option>Inverter</option>
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="example-color-input" class="col-5 col-form-label">Select Color</label>
+              <div class="col-7">
+                <input class="form-control" type="color" value="#297ce8" id="example-color-input">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Transform</button>
+          </form>
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="col">
+          <div class="card">
+
+            <div class="card-block">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+              <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+              <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+              <div class="p-3 mb-2 bg-warning text-white">.bg-warning</div>
+              <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
+            </div>
+
+            <div class="card-block">
+            <h4 class="card-title">Output</h4>
+            <form>
+            <div class="form-group">
+            <label for="exampleFormControlTextarea1">Copy colors below:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="13">
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan: #17a2b8 !default;
+            </textarea>
+            </div>
+            </form>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+  </body>
+
+  <script>
+    // You can also require other files to run in this process
+
+    require('./renderer.js');
+
+  </script>
+
+</html>
