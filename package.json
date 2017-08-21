@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/fantasyui-com/osmose/issues"
   },
-  "homepage": "https://github.com/fantasyui-com/osmose#readme"
+  "homepage": "https://github.com/fantasyui-com/osmose#readme",
+  "dependencies": {
+    "color": "^2.0.0",
+    "postcss": "^6.0.9",
+    "postcss-scss": "^1.0.2",
+    "postcss-value-parser": "^3.3.0"
+  }
 }

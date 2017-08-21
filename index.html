@@ -19,7 +19,7 @@
 
     <div class="container-fluid">
 
-      <div class="row">
+      <div class="row align-items-end">
 
 
 
@@ -29,35 +29,32 @@
         <div class="col">
           <div class="card">
 
-            <div class="card-block">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
-              <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
-              <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
-              <div class="p-3 mb-2 bg-warning text-white">.bg-warning</div>
-              <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
-            </div>
+
 
             <div class="card-block">
             <h4 class="card-title">Input</h4>
             <form>
             <div class="form-group">
-            <label for="exampleFormControlTextarea1">Paste colors below:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="13">
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan: #17a2b8 !default;
+            <label for="color-code-input">Paste colors below:</label>
+            <textarea class="form-control" id="color-code-input" rows="13">
+
+  $blue:    #007bff !default;
+  $indigo:  #6610f2 !default;
+  $purple:  #6f42c1 !default;
+  $pink:    #e83e8c !default;
+  $red:     #dc3545 !default;
+  $orange:  #fd7e14 !default;
+  $yellow:  #ffc107 !default;
+  $green:   #28a745 !default;
+  $teal:    #20c997 !default;
+  $cyan: #17a2b8 !default;
+
             </textarea>
             </div>
             </form>
             </div>
+
+
 
           </div>
         </div>
@@ -71,24 +68,93 @@ $cyan: #17a2b8 !default;
 
         <div class="col">
 
-          <form id="emitter-example-form" class="bg-faded p-3">
+          <form id="osmosis-form" class="bg-faded p-3">
             <div class="form-group row">
-              <label class="col-sm-12 col-form-label">Color Osmosis</label>
+              <label class="col-sm-12 col-form-label">Color Osmosis Control</label>
             </div>
-            <div class="form-group">
-              <label for="exampleSelect1">Select Transformer</label>
-              <select class="form-control" id="event-name-select">
-                <option>Solarizer</option>
-                <option>Inverter</option>
-              </select>
-            </div>
+
+
+
             <div class="form-group row">
-              <label for="example-color-input" class="col-5 col-form-label">Select Color</label>
+              <label for="color-format"  class="col-5 col-form-label">Mix</label>
               <div class="col-7">
-                <input class="form-control" type="color" value="#297ce8" id="example-color-input">
+                <select class="form-control" id="color-format">
+
+                  <option value="">Auto</option>
+                  <option value="hex">Hexadecimal</option>
+                  <option value="rgb">Red Green Blue</option>
+                  <option value="hsl">Hue Saturation Lightness</option>
+                  <option value="hwb">Hue White Black</option>
+
+                </select>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Transform</button>
+
+            <div class="form-group row">
+              <label for="mix-intensity"  class="col-5 col-form-label">Mix</label>
+              <div class="col-7">
+                <select class="form-control" id="mix-intensity">
+                  <option value="0.2">Low</option>
+                  <option value="0.5">Medium</option>
+                  <option value="0.7">High</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="mix-color" class="col-5 col-form-label">Color</label>
+              <div class="col-7">
+                <input class="form-control" type="color" value="#297ce8" id="mix-color">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="darkness-intensity"  class="col-5 col-form-label">Darkness</label>
+              <div class="col-7">
+                <select class="form-control" id="darkness-intensity">
+                  <option value="" >None</option>
+                  <option value="0.2" >Dark</option>
+                  <option value="0.5" >Darker</option>
+                  <option value="0.7" >Darkest</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="lightness-intensity"  class="col-5 col-form-label">Lightness</label>
+              <div class="col-7">
+                <select class="form-control" id="lightness-intensity">
+                  <option value="" >None</option>
+                  <option value="0.2" >Light</option>
+                  <option value="0.5" >Lighter</option>
+                  <option value="0.7" >Lightest</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="opaqueness-intensity"  class="col-5 col-form-label">Opaqueness</label>
+              <div class="col-7">
+                <select class="form-control" id="opaqueness-intensity">
+                  <option value="" >None</option>
+                  <option value="0.9" >Lightest</option>
+                  <option value="0.7" >Light</option>
+                  <option value="0.4" >Transparent</option>
+                </select>
+              </div>
+            </div>
+
+
+
+            <div class="form-group row">
+
+              <div class="col-12 text-right">
+                <hr>
+              <button type="submit" class="btn btn-primary">Apply</button>
+              </div>
+
+            </div>
+
           </form>
 
         </div>
@@ -104,35 +170,21 @@ $cyan: #17a2b8 !default;
         <div class="col">
           <div class="card">
 
-            <div class="card-block">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
-              <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
-              <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
-              <div class="p-3 mb-2 bg-warning text-white">.bg-warning</div>
-              <div class="p-3 mb-2 bg-info text-white">.bg-info</div>
-            </div>
+
 
             <div class="card-block">
             <h4 class="card-title">Output</h4>
             <form>
             <div class="form-group">
-            <label for="exampleFormControlTextarea1">Copy colors below:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="13">
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan: #17a2b8 !default;
+            <label for="color-code-output">Copy colors below:</label>
+            <textarea class="form-control" id="color-code-output" rows="13" readonly>
+
             </textarea>
             </div>
             </form>
             </div>
+
+
 
           </div>
         </div>

@@ -6,6 +6,9 @@ const pkg = require(__dirname + '/package.json')
 const EventEmitter = require('events');
 const fs = require('fs');
 const path = require('path');
+const Color = require('color');
+
+const crawlColors = require('./crawl-colors.js');
 
 class MyEmitter extends EventEmitter {}
 const ee = new MyEmitter();
@@ -68,20 +71,59 @@ ee.on('document-drop', (data) => {
 });
 
 
+ee.on('osmose', (data) => {
+  const transformed = transformer();
+  $('#color-code-output').val(output)
+});
+
+
 
 
 /* * *
   INTERNAL API EXAMPLE
 * * */
 
-$(function(){
+
+$( function(){
 
 
-  $( "#emitter-example-form" ).submit(function( event ) {
-    const eventName = $( "#event-name-select" ).val();
-    const color = $( "#example-color-input" ).val();
-    console.log((eventName, {color}))
-    ee.emit(eventName, {color})
+  $( "#osmosis-form" ).submit(function( event ) {
+
+    const css = $('#color-code-input').val();
+
+    // const filter = $( "#filter-type" ).val();
+    //
+    //
+    // console.log((eventName, {color}))
+    // ee.emit(eventName, {color})
+
+
+
+    let result = crawlColors({
+      css,
+      format: $( "#color-format" ).val(),
+      transformer:({color})=>{
+
+        const darknessIntensity = $( "#darkness-intensity" ).val();
+        const lightnessIntensity = $( "#lightness-intensity" ).val();
+        const opaquenessIntensity = $( "#opaqueness-intensity" ).val();
+
+        const mixIntensity = $( "#mix-intensity" ).val();
+        const mixColor = $( "#mix-color" ).val();
+
+      //  color = color.darken()
+        color = color
+        .mix(Color(mixColor), parseFloat(mixIntensity))
+
+        if(lightnessIntensity) color = color.whiten(lightnessIntensity);
+        if(darknessIntensity) color = color.blacken(darknessIntensity);
+        if(opaquenessIntensity) color = color.fade(opaquenessIntensity);
+
+        return color;
+      }
+    }).then(result=>$('#color-code-output').val(result));
+    ;
+
     event.preventDefault();
   });
 
