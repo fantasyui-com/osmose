@@ -15,7 +15,7 @@ module.exports = function({css, format, transformer, logger}) {
             parsed.walk(function(node) {
             if(node.type === 'word' && node.value.match(/^#[a-zA-Z0-9]{3,6}$/)){
               let color = Color(node.value);
-              if(logger) logger(color)
+              if(logger) logger({color})
               if(transformer){
                 color = transformer({color,rule,decl,node});
                 if(format) color = color[format]();
@@ -24,7 +24,7 @@ module.exports = function({css, format, transformer, logger}) {
                 function replacer(match, p1, offset, string) {
                   return parseFloat(p1).toFixed(2);
                 }
-                transformed = transformed.replace(/([0-9].[0-9]{3,})/g,replacer)
+                transformed = transformed.replace(/([0-9]\.[0-9]{3,})/g,replacer)
 
 
                 node.value = transformed
@@ -35,7 +35,7 @@ module.exports = function({css, format, transformer, logger}) {
                 let words = node.nodes.filter(node=>node.type==='word');
                 let synthetic = `${node.value}(${ words.map(i=>i.value).join(',') })`;
                 let color = Color(synthetic);
-                if(logger) logger(color)
+                if(logger) logger({color})
                 if(transformer){
                   color = transformer({color,rule,decl,node});
                   let dumpName = node.value;
@@ -48,7 +48,7 @@ module.exports = function({css, format, transformer, logger}) {
                   function replacer(match, p1, offset, string) {
                     return parseFloat(p1).toFixed(2);
                   }
-                  transformed = transformed.replace(/([0-9].[0-9]{3,})/g,replacer)
+                  transformed = transformed.replace(/([0-9]\.[0-9]{3,})/g,replacer)
 
                   node.type = 'word';
                   node.value = transformed;
