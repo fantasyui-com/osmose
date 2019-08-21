@@ -21,6 +21,6 @@
     "color": "^3.1.2",
     "postcss": "^7.0.17",
     "postcss-scss": "^2.0.0",
-    "postcss-value-parser": "^4.0.0"
+    "postcss-value-parser": "^4.0.2"
   }
 }
