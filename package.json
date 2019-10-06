@@ -1,6 +1,6 @@
 {
   "name": "osmose",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Electron application for easy color balancing and filtering.",
   "main": "main.js",
   "scripts": {
